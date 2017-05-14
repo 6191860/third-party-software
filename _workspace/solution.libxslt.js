@@ -20,7 +20,7 @@
 						var fileMarkBuild=buildPath+"/libxslt.process.build.done.txt";
 						if(!Shell.fileExists(fileMarkBuild)) {
 
-							With(new Make(),function() {
+							Script.with(new Make(),function() {
 								.target("win32/Makefile.msvc","../_port/libxslt.win32.Makefile.msvc",.copyFile);
 								.build();
 							});

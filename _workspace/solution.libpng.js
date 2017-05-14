@@ -44,7 +44,7 @@
 			.process=function(mode) {
 				switch(mode) {
 					case "build":
-						With(new Make(),function() {
+						Script.with(new Make(),function() {
 							.target("pnglibconf.h","../_port/libpng.pnglibconf.h",.copyFile);
 							.build();
 						});

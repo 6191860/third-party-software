@@ -138,7 +138,7 @@
 			.process=function(mode) {
 				switch(mode) {
 					case "build":
-						With(new Make(),function() {
+						Script.with(new Make(),function() {
 							.target("lib/zipconf.h","../_port/libzip.lib.zipconf.h",.copyFile);
 							.target("config.h","../_port/libzip.config.h",.copyFile);
 							.build();

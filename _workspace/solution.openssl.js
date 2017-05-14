@@ -20,7 +20,7 @@
 						var fileMarkBuild=buildPath+"/openssl.process.build.done.txt";
 						if(!Shell.fileExists(fileMarkBuild)) {
 
-							With(new Make(),function() {
+							Script.with(new Make(),function() {
 								.target("ms/32all.bat","../_port/openssl.ms.32all.bat",.copyFile);
 								.build();
 							});
@@ -64,7 +64,7 @@
 							Shell.copy("out32dll\\libeay32.lib",buildPath+"\\lib\\libeay32st.lib");
 							Shell.copy("out32dll\\libeay32.lib",buildPath+"\\lib\\VC\\libeay32MD.lib");
 							Shell.copy("out32dll\\libeay32.lib",buildPath+"\\lib\\VC\\libeay32st.lib");
-
+						  
 							Shell.copy("out32dll\\ssleay32.lib",buildPath+"\\lib\\ssleay32.lib");
 							Shell.copy("out32dll\\ssleay32.lib",buildPath+"\\lib\\ssleay32st.lib");
 							Shell.copy("out32dll\\ssleay32.lib",buildPath+"\\lib\\VC\\ssleay32MD.lib");
@@ -84,7 +84,7 @@
 							Shell.touch(fileMarkBuild);
 
 						};
-
+						
 						break;
 				};
 				return true;
@@ -115,6 +115,7 @@
 			.install("build-directory","include","include");
 
 		});
+
 	});
 });
 
